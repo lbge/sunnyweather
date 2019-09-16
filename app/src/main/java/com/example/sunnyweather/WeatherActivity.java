@@ -1,5 +1,6 @@
 package com.example.sunnyweather;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.example.sunnyweather.gson.Forecast;
 import com.example.sunnyweather.gson.Weather;
+import com.example.sunnyweather.service.AutoUpdateService;
 import com.example.sunnyweather.util.HttpUtil;
 import com.example.sunnyweather.util.Utility;
 
@@ -34,7 +36,7 @@ import okhttp3.Response;
 
 public class WeatherActivity extends AppCompatActivity {
 
-    /*
+    /**
      ** 控件
      */
 
@@ -69,7 +71,7 @@ public class WeatherActivity extends AppCompatActivity {
     @BindView(R.id.nav_button)
     Button navButton;
 
-    /*
+    /**
      ** 非控件
      */
     private String mWeatherId;
@@ -120,7 +122,7 @@ public class WeatherActivity extends AppCompatActivity {
 
     }
 
-    /*
+    /**
      *根据天气id请求城市天气信息
      */
     public void requestWeather(final String weatherId) {
@@ -170,7 +172,7 @@ public class WeatherActivity extends AppCompatActivity {
         loadBingPic();
     }
 
-    /*
+    /**
      *加载每日一图
      */
     private void loadBingPic() {
@@ -201,7 +203,7 @@ public class WeatherActivity extends AppCompatActivity {
 
     }
 
-    /*
+    /**
      *处理并显示Weather实体类中的数据
      */
     public void showWeatherInfo(Weather weather) {
@@ -239,5 +241,8 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        //激活自动更新服务
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startService(intent);
     }
 }

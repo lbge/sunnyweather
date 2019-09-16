@@ -14,7 +14,7 @@ import org.json.JSONObject;
 
 public class Utility {
 
-    /*
+    /**
      * 解析和处理返回的省级数据
      */
     public static boolean handleProvinceResponse(String response) {
@@ -37,7 +37,7 @@ public class Utility {
         return false;
     }
 
-    /*
+    /**
      * 解析和处理返回的市级数据
      */
     public static boolean handleCityResponse(String response, int provinceId) {
@@ -61,7 +61,7 @@ public class Utility {
         return false;
     }
 
-    /*
+    /**
      * 解析和处理返回的县级数据
      */
     public static boolean handleCountyResponse(String response, int cityId) {
@@ -85,7 +85,7 @@ public class Utility {
         return false;
     }
 
-    /*
+    /**
      *将返回的JSON数据解析成Weather实体类
      */
     public static Weather handleWeatherResponse(String response){

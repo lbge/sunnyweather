@@ -38,7 +38,7 @@ import okhttp3.Response;
 
 public class ChooseAreaFragment extends Fragment {
 
-    /*
+    /**
      *控件
      */
     @BindView(R.id.title_text)
@@ -51,7 +51,7 @@ public class ChooseAreaFragment extends Fragment {
     ListView listView;
 
     private Unbinder unbinder;
-    /*
+    /**
      *非控件
      */
     public static final int LEVEL_PROVINCE = 0;
@@ -132,7 +132,7 @@ public class ChooseAreaFragment extends Fragment {
         queryProvinces();
     }
 
-    /*
+    /**
      *查询全国所有的省份，优先从数据库查找，如果没有再去服务器查询
      */
     private void queryProvinces() {
@@ -153,7 +153,7 @@ public class ChooseAreaFragment extends Fragment {
         }
     }
 
-    /*
+    /**
      *查询省内所有的城市，优先从数据库查找，如果没有再去服务器查询
      */
     private void queryCities() {
@@ -177,7 +177,7 @@ public class ChooseAreaFragment extends Fragment {
 
     }
 
-    /*
+    /**
      *查询市内所有的县，优先从数据库查找，如果没有再去服务器查询
      */
     private void queryCounties() {
@@ -201,7 +201,7 @@ public class ChooseAreaFragment extends Fragment {
         }
     }
 
-    /*
+    /**
      *根据传入的地址和类型从服务器查询数据
      */
     private void querryFromSevrer(String address, final String type) {
@@ -252,7 +252,7 @@ public class ChooseAreaFragment extends Fragment {
 
     }
 
-    /*
+    /**
      *显示进度对话框
      */
     private void showProgressDialog() {
@@ -264,7 +264,7 @@ public class ChooseAreaFragment extends Fragment {
         progressDialog.show();
     }
 
-    /*
+    /**
      *关闭进度对话框
      */
     private void closeProgressDialog() {
